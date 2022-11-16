@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC37W3H4L">
+        </script>
+        <script>window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+
+          gtag("config", "G-DTC37W3H4L");
+        </script>
+        <script src="https://storage.ko-fi.com/cdn/widget/Widget_2.js">
+        </script>
+<!--        <style>-->
+<!--            #quit{-->
+<!--                float: right;-->
+<!--            }-->
+<!--        </style>-->
+        <title>Genshin Impact Wish Sim</title>
+    </head>
+    <body>
+<!--        <div class="form-control" id="quit">-->
+<!--            <img th:src="@{/images/quit.jpg}" th:href="@{/index}">-->
+<!--        </div>-->
+        <div id="root"></div>
+        <script th:src="@{/main.js}"></script>
+    </body>
+</html>

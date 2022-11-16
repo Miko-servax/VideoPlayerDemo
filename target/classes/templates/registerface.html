@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>请对准摄像头，进行人脸识别，验证年龄</title>
+    <meta charset="utf-8">
+</head>
+<script th:inline="javascript" type="text/javascript">
+	var userName = [[${userName}]]
+</script>
+<script type="text/javascript" th:src="@{/getFace/Getcafe/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/getFace/Getcafe/js/Registerface.js}"></script>
+<style>
+	.getface{
+		position: absolute;
+		top: 20%;
+		left: 35%;
+	}
+
+	.tishi{
+		font-size: 20px;
+		
+	}
+</style>
+<body>
+<div align="center">
+	<p id="flag" class="tishi"></p>
+</div>
+<div class="getface">
+	<video id="video" width="400px" height="400px" autoplay="autoplay"></video>
+	<canvas id="canvas" width="400px" height="400px" style="display: none;"></canvas>
+	<img id="imgTag" src="" alt="imgTag" style="display: none;">
+</div>
+
+</body>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>History</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap -->
+<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' media="all" />
+<!-- //bootstrap -->
+<link th:href="@{/css/dashboard.css}" rel="stylesheet">
+<!-- Custom Theme files -->
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' media="all" />
+<script th:src="@{/js/jquery-1.11.1.min.js}"></script>
+<!--start-smoth-scrolling-->
+<!-- fonts -->
+<link href='#css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='#css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<!-- //fonts -->
+</head>
+  <body>
+  <nav th:replace="~{commons/commons::topbar}"></nav>
+  <div th:replace="~{commons/commons::sidebar}"></div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="show-top-grids">
+				<div class="main-grids news-main-grids">
+					<div class="recommended-info">
+						<h3>历史记录</h3>
+						<p class="history-text">在这里可以看到您的历史记录。
+							</span>
+						</p>
+						<div class="history-grids">
+							<div class="col-md-1 history-left">
+								<p>2022</p>
+							</div>
+							<div class="col-md-11 history-right">
+								<h5 style="color: black" th:text="${title}" th:if="${not #strings.isEmpty(title)}"></h5>
+								<p style="color: black" th:text="${content}" th:if="${not #strings.isEmpty(content)}">
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="history-grids"  th:if="${ #strings.isEmpty(title)}">
+							<div class="col-md-1 history-left">
+								<p>2022</p>
+							</div>
+							<div class="col-md-11 history-right">
+								<h5 style="color: black" th:text="暂无您的历史记录" th:if="${ #strings.isEmpty(title)}"></h5>
+<!--								<p style="color: black" th:text="${content}" th:if="${not #strings.isEmpty(content)}">-->
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+<!--						<div class="history-grids">-->
+<!--							<div class="col-md-1 history-left">-->
+<!--								<p>2005</p>-->
+<!--							</div>-->
+<!--							<div class="col-md-11 history-right">-->
+<!--								<h5>Class aptent taciti sociosqu ad litora torquent per conubia</h5>-->
+<!--								<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.-->
+<!--								Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.</p>-->
+<!--							</div>-->
+<!--							<div class="clearfix"> </div>-->
+<!--						</div>-->
+<!--						<div class="history-grids">-->
+<!--							<div class="col-md-1 history-left">-->
+<!--								<p>2007</p>-->
+<!--							</div>-->
+<!--							<div class="col-md-11 history-right">-->
+<!--								<h5>Integer sem sem, ornare id velit a, semper fringilla magna</h5>-->
+<!--								<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.-->
+<!--								Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.</p>-->
+<!--							</div>-->
+<!--							<div class="clearfix"> </div>-->
+<!--						</div>-->
+<!--						<div class="history-grids">-->
+<!--							<div class="col-md-1 history-left">-->
+<!--								<p>2009</p>-->
+<!--							</div>-->
+<!--							<div class="col-md-11 history-right">-->
+<!--								<h5>Praesent a dui sit amet turpis tempus gravida eu quis mi</h5>-->
+<!--								<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.-->
+<!--								Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.</p>-->
+<!--							</div>-->
+<!--							<div class="clearfix"> </div>-->
+<!--						</div>-->
+<!--						<div class="history-grids">-->
+<!--							<div class="col-md-1 history-left">-->
+<!--								<p>2011</p>-->
+<!--							</div>-->
+<!--							<div class="col-md-11 history-right">-->
+<!--								<h5>Integer sem sem, ornare id velit a, semper fringilla magna</h5>-->
+<!--								<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.-->
+<!--								Morbi eget malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed placerat porta justo, at sollicitudin velit. Curabitur sed hendrerit justo, eu vehicula lorem.</p>-->
+<!--							</div>-->
+<!--							<div class="clearfix"> </div>-->
+<!--						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+	<div class="drop-menu">
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+		</ul>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div>-->
+<!--    <h3>请输入您要预测的队伍</h3>-->
+<!--    <form method="post" th:action="@{/others/WorldCup}">-->
+<!--        <input type="text" name="host" th:placeholder="请输入主场队伍">-->
+<!--        <input type="text" name="guest" th:placeholder="请输入客场队伍">-->
+<!--        <input type="submit" value="预测">-->
+<!--    </form>-->
+<!--    <h3 th:text="${forecast}"></h3>-->
+<!--    <div th:fragment="rate">-->
+<!--        <ul th:each="t:${list}">-->
+<!--            <li th:text="${t}"></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<head>
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+    <meta name='viewport' content='width=device-width,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>
+    <title>原神抽卡模拟器</title>
+    <link th:href="@{/forecast/icon.ico}" rel='icon' type='image/x-icon' />
+    <link th:href="@{/forecast/css/index.css}" rel='stylesheet' type='text/css' />
+    <link th:href="@{/forecast/css/icons.min.css}" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/forecast/css/bootstrap2.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/forecast/css/signin2.css}" rel="stylesheet">
+
+<!--    <style>-->
+<!--        ul{-->
+<!--            /*margin: 0px;*/-->
+<!--            /*padding: 0 0 0 0;*/-->
+<!--            /*width: 920px;*/-->
+<!--            list-style: none;-->
+<!--        }-->
+<!--    </style>-->
+
+</head>
+<body onload="start();" class="text-center">
+<div id='overlay' class='overlay'>
+    <div class='text-bg'>
+        <!--            <h3>原神抽卡模拟器&nbsp;&nbsp;<a href="https://github.com/0803QwQ/gitool-gacha-simulator/blob/main/README.md#%E5%85%B7%E4%BD%93%E6%A6%82%E7%8E%87" target="_blank" style="color:#1E83FF">概率公示</a></h3>-->
+        <h4 style="font-weight: bold ; margin-top: 30px">世界杯预测模拟器（仅供娱乐）&nbsp;&nbsp;</h4>
+        <!--            <a href="JavaScript:pool(1);"><button id="pool1" name="pool">角色池</button></a>-->
+        <!--            <a href="JavaScript:pool(2);"><button id="pool2" name="pool" style="border-width:2px;background:rgba(255,255,255,0.8);color:#FFB31E">武器池</button></a>-->
+        <!--            <a href="JavaScript:pool(3);"><button id="pool3" name="pool" style="border-width:2px;background:rgba(255,255,255,0.8);color:#FFB31E">常驻池</button></a><br>-->
+        <form class="form-signin" method="post" th:action="@{/others/WorldCup}">
+            <input type="text" name="host" class="form-control" required="required" placeholder="请输入主场队伍"> <br/>
+            <input type="text" name="guest" class="form-control" required="required" placeholder="请输入客场队伍"> <br/>
+            <!--                <input type="submit" value="预测">-->
+            <button id="yuce" class="btn btn-lg btn-primary btn-block"  type="submit" name="forecast">预测</button></p>
+            <a th:href="@{/index}"><button id="fanhui" class="btn btn-lg btn-primary btn-block" type="button" name="back">返回</button></a>
+        </form>
+<!--        <a th:href="@{/index}"><button id="fanhui" class="btn btn-lg btn-primary btn-block" name="back">返回</button></a>-->
+<!--        <button id="yuce" class="btn btn-lg btn-primary btn-block"  type="submit" name="only">预测</button></p>-->
+        <!--            <a href="JavaScript:show(1);"><button id="show1" name="show">全部</button></a>-->
+        <!--            <a href="JavaScript:show(2);"><button id="show2" name="show" style="border-width:2px;background:rgba(255,255,255,0.8);color:#32EB00">仅看5星</button></a>-->
+        <!--            <a href="JavaScript:show(3);"><button id="show3" name="show" style="border-width:2px;background:rgba(255,255,255,0.8);color:#32EB00">仅看4星</button></a><br>-->
+        <div class='notice'>
+            <p>
+<!--                预测次数：<span name="times">0</span>抽&nbsp;-->
+<!--                消耗原力：<span name="spend">0</span>点<br>-->
+                <!--    <h3 th:text="${forecast}"></h3>-->
+                <!--    <div th:fragment="rate">-->
+                <!--        <ul th:each="t:${list}">-->
+                <!--            <li th:text="${t}"></li>-->
+                <!--        </ul>-->
+                <!--    </div>-->
+            <span style="font-weight: bolder">预测结果</span>
+                <p th:text="${forecast}"></p>
+                <div th:fragment="rate">
+                    <ul class="list-group list-group-flush" th:each="t:${list}">
+                        <li style="background-color: rgba(0,0,0,0)" class="list-group-item disabled" th:text="${t}"></li>
+                    </ul>
+                </div>
+<!--                出货数据：<br>-->
+<!--                <span name="r3num">0</span>个<br>-->
+<!--                <span name="r4num">0</span>个<br>-->
+<!--                <span name="r5num">0</span>个<br>-->
+                <!--                    距离保底还有 <span name="floot">90</span> 抽<br>-->
+                <br/>
+                <span name="up">
+                        当前赛事：<span name="upr5">摩洛哥-葡萄牙</span><br>
+                        下期赛事：<span name="upr4">英格兰-法国</span>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+<table cellspacing='0' cellpadding='5' id="loading" style="display:none">
+    <tbody>
+    <tr>
+        <td><div id="loading-animate"><i class="bx bx-loader-alt" style="font-size:50px"></i></div></td>
+    </tr>
+    <tr>
+        <td><p>Loading...</p></td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/javascript" th:src="@{/forecast/js/jquery-3.4.1.min.js}"></script>
+<script type='text/javascript' th:src="@{/forecast/js/index.js?ver=2.7.0}"></script>
+<script>function start() {$().setValue(1, "with");}</script>
+<!--<footer id="footer">
+    <ul class="copyright">
+        <p>2022 &copy; Powered by 0803QwQ</p>
+    </ul>
+</footer>-->
+</body>
+</html>
