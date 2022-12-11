@@ -2,7 +2,7 @@ spring:
 #  mvc:
 #    static-path-pattern:/dist/**
   datasource:
-    username: root
+    username: poky
     password: "6150"
     url: jdbc:mysql://localhost:3306/videowatcher?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
