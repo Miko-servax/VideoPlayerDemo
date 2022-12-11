@@ -1184,7 +1184,7 @@ width:100%;
     outline: none;
     font-style: normal;
     padding: 8px 20px;
-    background: #21DEEF;
+    background: #fb7299;
     font-size: 14px;
     color: #fff;
     display: block;
@@ -1232,7 +1232,7 @@ width:100%;
 }
 .all-comments-buttons ul li a.top:hover{
     color: #FFFFFF;
-    background: #21DEEF;
+    background: #fb7299;
 }
 .media-grids{
 	margin-top:4em;
@@ -1271,7 +1271,7 @@ width:100%;
     font-size: 13px;
 }
 .media-body  span a {
-    color: #21DEEF;
+    color: #fb7299;
     text-decoration: none;
 }
 .media:nth-child(3) {
@@ -1310,7 +1310,7 @@ width:100%;
     margin: 0em 0;
 }
 .single-right-grid-right p.author a {
-    color: #21DEEF;
+    color: #fb7299;
     text-decoration: none;
 }
 .single-right-grid-right p.views {
@@ -1358,7 +1358,7 @@ span.glyphicon.glyphicon-user {
 }
 .about-left-info a{
     font-size: 20px;
-    color: #21DEEF;
+    color: #fb7299;
     margin: 0 0 .5em 0;
     font-weight: 600;
     text-decoration: none;
@@ -1414,7 +1414,7 @@ span.glyphicon.glyphicon-user {
 }
 .news-left h3{
     font-size: 20px;
-    color: #21DEEF;
+    color: #fb7299;
     margin: 0 0 .5em 0;
     font-weight: 600;
 }
@@ -1435,7 +1435,7 @@ span.glyphicon.glyphicon-user {
     line-height: 1.8em;
 }
 .news-right ol li a:hover{
-    color: #21DEEF;
+    color: #fb7299;
     text-decoration: none;
 }
 /*-- copyright --*/
@@ -1449,7 +1449,7 @@ span.glyphicon.glyphicon-user {
     line-height: 1.8em;
 }
 .copy-info ol li a:hover{
-    color: #21DEEF;
+    color: #fb7299;
     text-decoration: none;
 }
 .copy-grid h4{
@@ -1463,7 +1463,7 @@ span.glyphicon.glyphicon-user {
 }
 .copy-bottom-grid h5{
   font-size: 18px;
-  color: #03BAAD;
+  color: #fb7299;
   margin: 0 0 1em 0;
   font-weight: 600;
 }
@@ -1502,7 +1502,7 @@ span.glyphicon.glyphicon-user {
     margin-bottom: 3em;
 }
 .developers-grid a{
-    color: #21DEEF;
+    color: #fb7299;
     font-size: 24px;
     margin: 0;
     text-decoration: none;
@@ -1527,7 +1527,7 @@ span.glyphicon.glyphicon-user {
     margin-bottom: 3em;
 }
 .creators-grid a{
-	color: #21DEEF;
+	color: #fb7299;
     font-size: 24px;
     margin: 0;
     text-decoration: none;
@@ -1543,7 +1543,7 @@ span.glyphicon.glyphicon-user {
 }
 .creators-bottom-grids-info h3{
 	text-align: center;
-    color: #21DEEF;
+    color: #fb7299;
     font-size: 24px;
     margin: 0;
 }
@@ -1566,7 +1566,7 @@ span.glyphicon.glyphicon-user {
     line-height: 1.8em;
 }
 .services-icon {
-  background: #2EDACE;
+  background: #fb7299;
   width: 100px;
   height: 100px;
   line-height: 12em;
@@ -1610,7 +1610,7 @@ span.glyphicon.glyphicon-user {
     padding: 2em;
 }
 .try-left-info h3{
-    color: #21DEEF;
+    color: #fb7299;
     font-size: 24px;
     margin: 0;
 }
@@ -1625,7 +1625,7 @@ span.glyphicon.glyphicon-user {
     padding: 2em;
 }
 .try-right-left h3{
-    color: #21DEEF;
+    color: #fb7299;
     font-size: 3em;
     margin: 0;
 }
@@ -1730,7 +1730,7 @@ span.glyphicon.glyphicon-user {
 }
 .upload-right-bottom-left ul li a:hover{
     text-decoration: none;
-    color: #21DEEF;
+    color: #fb7299;
 }
 .news-main-grids {
     padding: 0 0 1em 3em;

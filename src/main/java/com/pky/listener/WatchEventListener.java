@@ -15,7 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 //观察者模式，设置监听事件，即记录用户结束观影时间（未实现实时监控，以固定时长代替）
-@Slf4j
+
 @Component
 public class WatchEventListener implements ApplicationListener<watchEvent> {
 

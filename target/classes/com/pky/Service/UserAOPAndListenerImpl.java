@@ -62,6 +62,13 @@ public class UserAOPAndListenerImpl {
 
 
 
+    // public void detailsLog(){
+    //     String username = findUser();
+    //     Users currentUser = userMapper.getUser(username);
+    //     UserViewDetails userDaoDetails = detailsMapper.queryDetails(currentUser.getID());
+    //     Videos myVideo = videoMapper.getVideo(userDaoDetails.getVideoID());
+    //     String videoName = myVideo.getVideoName();
+    // }
 
     public void sendEmail(HttpServletRequest request){
 
@@ -71,7 +78,7 @@ public class UserAOPAndListenerImpl {
             Users currentUser = userMapper.getUser(username);
             String currentAdultUser = currentUser.getAdultUser();
             String currentAdultUserEmail = null;
-            String subject = "家长你好，这是您孩子的看片记录";
+            String subject = "家长你好，这是您孩子的观看记录";
             if (currentAdultUser != null) {
                 currentAdultUserEmail = userMapper.getUser(currentAdultUser).getEmail();
             }
@@ -95,7 +102,7 @@ public class UserAOPAndListenerImpl {
                 case 2:
                     // publisher.publishEvent(new watchEvent(this, username, "20分钟"));
                     // cuwe = (String) request.getSession().getAttribute("currentUserWatchEvent");
-                    details = "家长您好，您的孩子从"+ userDaoDetails.getStartWatch() +"开始观看，共观看了"+ time +"钟电影";
+                    details = "家长您好，您的孩子从"+ userDaoDetails.getStartWatch() +"开始观看，共观看了"+ time +"分钟电影";
                     iMailService.sendSimpleMail(currentAdultUserEmail, subject, details);
                     break;
                 case 3:

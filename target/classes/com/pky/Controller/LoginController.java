@@ -1,6 +1,8 @@
 package com.pky.Controller;
 
 import com.pky.Service.LoginService;
+import com.pky.Service.UserAOPAndListenerImpl;
+import com.pky.dao.DetailsMapper;
 import com.pky.dao.UserMapper;
 import com.pky.pojo.Users;
 import com.pky.utils.GsonUtils;
@@ -24,6 +26,11 @@ public class LoginController {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    DetailsMapper detailsMapper;
+
+    @Autowired
+    UserAOPAndListenerImpl userAOPAndListener;
     @RequestMapping("/toLogin")
     public String toLogin(Model model){
         return "/login";
@@ -49,7 +56,9 @@ public class LoginController {
     //登录成功跳转
     @RequestMapping("/facesucceed")
     public String facesucceed(){
-        return "index";
+        int userID = userAOPAndListener.findUserID();
+        detailsMapper.addUser(userID);
+        return "redirect:/index";
     }
     //注册跳转
     @RequestMapping("/jumpregisterface")

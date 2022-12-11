@@ -27,7 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/history/**").hasAnyRole("child","teenager","adult")
                 .antMatchers("/child/**").hasAnyRole("child","teenager","adult")
                 .antMatchers("/teenager/**").hasAnyRole("teenager","adult")
-                .antMatchers("/adult/**").hasRole("adult");
+                .antMatchers("/adult/**").hasRole("adult")
+                .antMatchers("/v/**").hasAnyRole("child","teenager","adult");
 
         http.formLogin()
                 .usernameParameter("username")

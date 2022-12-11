@@ -35,9 +35,9 @@ public class LogAspect {
 
     @Before("Pointcut()")
     public void doBefore(JoinPoint joinPoint){
-        int id = userMapper.getUser(userAOPAndListener.findUser()).getID();
-        detailsMapper.addStartTime(id, new java.sql.Timestamp(new Date().getTime()));
-        log.info("访问时间：{}--访问接口：{}",new Date(),joinPoint.getSignature());
+        // int id = userMapper.getUser(userAOPAndListener.findUser()).getID();
+        // detailsMapper.addStartTime(id, new java.sql.Timestamp(new Date().getTime()));
+        // log.info("访问时间：{}--访问接口：{}",new Date(),joinPoint.getSignature());
     }
 
 

@@ -5,6 +5,7 @@ import com.pky.Service.UserAOPAndListenerImpl;
 import com.pky.Service.WorldCupForecast;
 import com.pky.Service.addDetails;
 import com.pky.dao.DetailsMapper;
+import com.pky.dao.UserMapper;
 import com.pky.dao.VideoMapper;
 import com.pky.pojo.UserViewDetails;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,9 @@ public class RouterController {
     @Autowired
     private WorldCupForecast worldCup;
 
+    @Autowired
+    private UserMapper userMapper;
+
 
     @RequestMapping({"/", "/index"})
     public String index(){
@@ -60,7 +64,9 @@ public class RouterController {
 
         addDetails.addVideo(1);
         publisher.publishEvent(new watchEvent(this));
-        userAOPAndListener.sendEmail(request);
+        if (userMapper.getUser(userAOPAndListener.findUser()).getUserAge() < 18){
+            userAOPAndListener.sendEmail(request);
+        }
         return "/level1/single";
     }
 
@@ -68,12 +74,14 @@ public class RouterController {
     public String teenagerView(HttpServletRequest request){
         publisher.publishEvent(new watchEvent(this));
         addDetails.addVideo(2);
+
         // userAOPAndListener.sendEmail(request);
         return "/level2/single";
     }
 
     @RequestMapping("/adult/1")
     public String adultView(HttpServletRequest request){
+        addDetails.addVideo(3);
         publisher.publishEvent(new watchEvent(this));
         // userAOPAndListener.sendEmail(request);
         return "/level3/single";
@@ -83,7 +91,10 @@ public class RouterController {
     public String history(Model model){
         UserViewDetails details = detailsMapper.queryDetails(userAOPAndListener.findUserID());
         String title = videoMapper.getVideo(details.getVideoID()).getVideoName();
-        String content = "您于"+ details.getStartWatch() +"观看了影片"+ title +"，从"+ details.getEndWatch() +"结束观看。";
+        String content = "暂无数据！";
+        if (details!=null&&title!=null){
+            content = "您于"+ details.getStartWatch() +"观看了影片"+ title +"，从"+ details.getEndWatch() +"结束观看。";
+        }
         model.addAttribute("title",title);
         model.addAttribute("content",content);
         return "history";

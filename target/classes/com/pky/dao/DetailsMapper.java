@@ -12,6 +12,8 @@ import java.sql.Timestamp;
 @Repository
 public interface DetailsMapper {
 
+    Integer addUser(@Param("userID") int userID);
+    // Integer findUser(@Param("userID") int userID);
     Integer addVideo(@Param("videoID") int videoID,@Param("userID") int userID);
 
     Integer addStartTime(int userID, Timestamp StartWatch);

@@ -20,4 +20,9 @@
         select * from videowatcher.userviewdetails where userID=#{userID}
     </select>
 
+    <select id="addUser" parameterType="int">
+        INSERT ignore INTO videowatcher.userviewdetails (userID) VALUES (#{userID})
+    </select>
+
+
 </mapper>
